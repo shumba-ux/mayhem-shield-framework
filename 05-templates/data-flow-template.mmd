@@ -1,0 +1,8 @@
+flowchart LR
+  input[Input Source] --> ingest[Ingestion]
+  ingest --> preprocess[Pre-Processing]
+  preprocess --> model[Model Inference]
+  model --> review[Human Review]
+  review --> output[Output Consumer]
+
+  model --> telemetry[(Telemetry)]

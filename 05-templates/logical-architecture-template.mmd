@@ -1,0 +1,11 @@
+flowchart TB
+  user[User]
+  app[Application Layer]
+  ai[AI Service]
+  store[(Data Store)]
+  logs[(Audit Logs)]
+
+  user --> app
+  app --> ai
+  app --> store
+  app --> logs

@@ -1,0 +1,12 @@
+flowchart TB
+  trigger[Failure Trigger]
+  detect[Detection]
+  contain[Containment]
+  decision{Customer Impact?}
+  notify[Notify Stakeholders]
+  recover[Recovery]
+  post[Post-Incident Review]
+
+  trigger --> detect --> contain --> decision
+  decision -- Yes --> notify --> recover --> post
+  decision -- No --> recover --> post

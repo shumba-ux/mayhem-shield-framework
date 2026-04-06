@@ -1,0 +1,14 @@
+flowchart LR
+  subgraph ext[External]
+    user[External User]
+  end
+
+  subgraph org[Organization Trust Boundary]
+    app[Internal Application]
+    controls[Security Controls]
+    data[(Protected Data)]
+  end
+
+  user --> app
+  app --> controls
+  controls --> data
