@@ -10,3 +10,7 @@ Typical evidence includes:
 - contract language
 - logging samples
 - validation or test results
+
+## Framework reference
+
+Evidence rules align with ISO/IEC 42001 Clause 9 (Performance evaluation), which establishes that AI management system controls require demonstrated, measured operation rather than asserted existence. See `framework-alignment.md` for the broader methodology-to-framework mapping.

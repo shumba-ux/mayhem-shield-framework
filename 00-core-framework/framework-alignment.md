@@ -23,7 +23,7 @@ The Govern, Map, Measure, and Manage functions of the NIST AI RMF inform the str
 
 - Map informs intake classification (implementation category and applicable overlays)
 - Measure informs evidence rules and the findings register
-- Manage informs gate conditions for POC, pilot, and production
+- Manage informs gate conditions for POC, pilot, and production, and severity calibration (see `severity-model.md`)
 - Govern informs the review of organizational accountability for the deployment under review
 
 The four-function structure is used as a reference for how a review covers risk identification, measurement, and management across the engagement, not as a checklist.
@@ -37,7 +37,7 @@ Specifically:
 - Clause 5 (Leadership) informs how Mayhem Shield reviews accountability and ownership for the AI deployment
 - Clause 6 (Planning) informs how risk assessment and treatment are evaluated
 - Clause 8 (Operation) informs how operational controls are reviewed
-- Clause 9 (Performance evaluation) informs evidence rules around monitoring and measurement
+- Clause 9 (Performance evaluation) informs evidence rules around monitoring and measurement (see `evidence-model.md`)
 
 The standard is used as an alignment reference. Mayhem Shield is not certified to ISO/IEC 42001 and does not represent itself as such.
 
@@ -50,31 +50,29 @@ The EU AI Act's risk-tier classification informs platform classification at inta
 - Limited-risk systems trigger specific findings on transparency obligations
 - Minimal-risk systems trigger a lighter review aligned to the risk profile
 
-For deployments where the EU AI Act applies (either by deployment location, by user base, or by client policy), the risk tier is documented as part of intake and informs review depth and findings.
+For deployments where the EU AI Act applies, the risk tier is documented as part of intake and informs review depth and findings. See `../01-implementation-categories/README.md` for typical risk-tier mapping by implementation category.
 
 ## OWASP Top 10 for LLM Applications
 
 The OWASP Top 10 for LLM Applications is referenced for any deployment that includes a large language model component. Findings related to the OWASP categories are mapped to specific LLM IDs in the findings register.
 
-The mappings most commonly applied:
+The most common gap-category-to-OWASP-LLM mappings are documented in `gap-categories.md`. Summary:
 
-- LLM01 Prompt Injection
-- LLM02 Insecure Output Handling
-- LLM04 Model Denial of Service
-- LLM05 Supply Chain Vulnerabilities
-- LLM06 Sensitive Information Disclosure
-- LLM07 Insecure Plugin Design
-- LLM08 Excessive Agency
-- LLM09 Overreliance
-- LLM10 Model Theft
+- LLM01 Prompt Injection — Output Validation, Agentic Workflow Execution, Retrieval / Knowledge Security
+- LLM02 Insecure Output Handling — Output Validation, Agentic Workflow Execution, Output Liability
+- LLM05 Supply Chain Vulnerabilities — Vendor Assurance, Supply Chain and Dependency Integrity, SDLC / Change Control
+- LLM06 Sensitive Information Disclosure — Data Protection Outbound, Retrieval / Knowledge Security, Regulated Data Control, Integration / Connector Security
+- LLM08 Excessive Agency — Identity and Access, Agentic Workflow Execution, Integration / Connector Security
 
-Mappings are applied where the finding falls clearly within the OWASP category. Findings that do not fit the OWASP categories are recorded under the Mayhem Shield gap categories without forced mapping.
+LLM IDs not listed apply per engagement based on deployment specifics.
 
 ## NIST CSF 2.0
 
 The NIST Cybersecurity Framework 2.0 functions (Govern, Identify, Protect, Detect, Respond, Recover) provide a categorization layer for findings.
 
-The categorization helps enterprise security teams map Mayhem Shield findings to their existing CSF-aligned programs. Each finding can be tagged with the CSF function it most clearly addresses, in addition to the Mayhem Shield gap category. This is not a primary classification axis. It is a cross-reference for clients whose internal risk and compliance programs are organized around CSF.
+The categorization helps enterprise security teams map Mayhem Shield findings to their existing CSF-aligned programs. Each finding can be tagged with the CSF function it most clearly addresses, in addition to the Mayhem Shield gap category. See `gap-categories.md` for the gap-category-to-CSF-function mapping.
+
+The Recover function is a limited fit for the methodology. The methodology focuses on prevention and detection. Recovery activities (rollback, remediation, infrastructure restoration) are noted where applicable but are not the primary review concern. This is acknowledged transparently rather than overclaimed.
 
 ## SR 11-7
 
@@ -102,11 +100,11 @@ These standards inform how Mayhem Shield structures its review work. Specific fr
 
 ## Cross-reference summary
 
-| Standard | Where it shows up |
-|---|---|
-| NIST AI RMF | Gap structure, scoping classification, severity calibration, gate conditions |
-| ISO/IEC 42001 | Organizational governance review, accountability evidence rules |
-| EU AI Act | Platform classification at intake, high-risk tier findings |
-| OWASP Top 10 for LLM | LLM-specific findings tagged with OWASP IDs |
-| NIST CSF 2.0 | Cross-reference categorization layer for findings |
-| SR 11-7 | Regulated finance engagements involving model use |
+| Standard | Where it shows up | Detailed mapping |
+|---|---|---|
+| NIST AI RMF | Gap structure, scoping classification, severity calibration, gate conditions | `severity-model.md` |
+| ISO/IEC 42001 | Organizational governance review, accountability evidence rules | `evidence-model.md` |
+| EU AI Act | Platform classification at intake, high-risk tier findings | `../01-implementation-categories/README.md` |
+| OWASP Top 10 for LLM | LLM-specific findings tagged with OWASP IDs | `gap-categories.md` |
+| NIST CSF 2.0 | Cross-reference categorization layer for findings | `gap-categories.md` |
+| SR 11-7 | Regulated finance engagements involving model use | (engagement-specific) |
