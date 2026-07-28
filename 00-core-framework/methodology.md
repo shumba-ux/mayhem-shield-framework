@@ -4,6 +4,8 @@ Mayhem Shield uses an implementation-assurance methodology for enterprise AI dep
 
 The question is not whether a vendor says a control exists. The question is whether that control actually works for the specific deployment being reviewed.
 
+A companion question precedes it: whether the product does what the vendor claimed before the buyer signed. That upstream review is defined in `claim-verification.md`.
+
 ## Review model
 Each review is built from:
 - the core framework

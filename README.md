@@ -10,6 +10,7 @@ This repository is the public version of the Mayhem Shield framework. It provide
 - Evaluates implementation-level risk in AI-enabled systems.
 - Maps expected controls to concrete architecture and workflow patterns.
 - Uses evidence-based review phases and approval gates.
+- Verifies what vendors claim about AI products before contracts are signed.
 - Highlights control gaps and readiness concerns before production or expansion.
 
 ## What this framework is
@@ -54,7 +55,7 @@ Mayhem Shield's methodology references established standards including NIST AI R
 You will leave with a labeled scope (category plus overlays) and vocabulary aligned with the rest of the framework. Deeper work lives under `00-core-framework/` (evidence, severity, gates) and `05-templates/` when you are ready to document architecture and flows.
 
 ## How to navigate this repository
-- `00-core-framework/` - Core methodology, evidence model, severity model, and review structure.
+- `00-core-framework/` - Core methodology, evidence model, claim verification, severity model, and review structure.
 - `01-implementation-categories/` - Definitions and distinctions for the six primary categories.
 - `02-capability-overlays/` - Overlay definitions and control-impact context.
 - `03-guides/` - Public-safe guidance for category and overlay selection.
@@ -62,11 +63,12 @@ You will leave with a labeled scope (category plus overlays) and vocabulary alig
 
 Recommended path:
 1. `00-core-framework/methodology.md`
-2. `01-implementation-categories/README.md`
-3. `02-capability-overlays/README.md`
-4. `03-guides/category-selection-guide.md`
-5. `03-guides/overlay-selection-guide.md`
-6. `00-core-framework/framework-alignment.md`
+2. `00-core-framework/claim-verification.md`
+3. `01-implementation-categories/README.md`
+4. `02-capability-overlays/README.md`
+5. `03-guides/category-selection-guide.md`
+6. `03-guides/overlay-selection-guide.md`
+7. `00-core-framework/framework-alignment.md`
 
 ## What is intentionally not included in this public version
 This repository intentionally excludes proprietary internal delivery artifacts. It is designed for framework transparency and public education, not for complete internal engagement execution.

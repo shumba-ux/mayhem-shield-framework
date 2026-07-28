@@ -1,14 +1,5 @@
 # Claim Verification
 
-*Draft for `00-core-framework/claim-verification.md`. Written to be committed
-after one reconciliation pass against the existing `evidence-model.md`
-vocabulary, in the clone, by whoever holds it. Reconciliation notes are marked
-`[RECONCILE]` and must be resolved and deleted before commit. Public-safe: no
-internal tooling, no delivery artifacts, consistent with this repository's
-stated exclusions.*
-
----
-
 ## Where this sits in the framework
 
 The implementation categories, overlays, and review phases in this framework
@@ -55,10 +46,13 @@ class.
 | **Contractual** | Terms, DPA/BAA language, vendor attestation | What the vendor has committed to, and what recourse exists |
 | **Unverified** | No evidence obtained, or the claim is not assessable | Nothing. Stated so the gap is visible rather than absent |
 
-[RECONCILE] If `evidence-model.md` already defines evidence types or levels,
-these five map onto that vocabulary rather than replacing it. One vocabulary
-across the framework; where the two differ, the existing public term wins and
-this table adopts it.
+These classes organize the typical evidence listed in `evidence-model.md`:
+architecture diagrams, configuration screenshots, and workflow definitions are
+configuration-class; logging samples are log-class; policy references and
+contract language are contractual-class; and validation or test results reach
+behavioral class only when the reviewer performed the validation. The
+principle is the same one `evidence-model.md` states for deployments: a claim
+is not treated as satisfied because someone says it is.
 
 **Two rules that hold everywhere:**
 
@@ -138,10 +132,3 @@ not published here. The method above lets a reader evaluate whether the
 reasoning in a claim-verification deliverable is sound, and lets a competent
 reader reconstruct any published test from its stated conditions. It does not
 include the internal tooling that produces the evidence.
-
----
-
-*[RECONCILE] Before commit: (1) adopt `evidence-model.md`'s terms where they
-overlap; (2) add a one-line pointer to this file from `methodology.md` where
-review phases are introduced, and from the README's navigation section;
-(3) add the file to `repo-map.md`; (4) delete these notes.*
